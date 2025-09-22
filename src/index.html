@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORQELY - Smart Platform to Connect with Skilled Workers Instantly</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading screen -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p class="loading-text">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Navigation Header -->
+        <header id="main-header" class="main-header">
+            <div class="container">
+                <nav class="navbar">
+                    <div class="navbar-brand">
+                        <div class="logo">
+                            <div class="handshake-icon">🤝</div>
+                            <span class="brand-name">WORQELY</span>
+                        </div>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <div class="nav-links">
+                            <a href="#about" class="nav-link" data-translate="about">About WORQELY</a>
+                            <a href="#services" class="nav-link" data-translate="services">Our Services</a>
+                            <a href="#how-it-works" class="nav-link" data-translate="howItWorks">How It Works</a>
+                            <a href="#testimonials" class="nav-link" data-translate="testimonials">What Our Users Say</a>
+                        </div>
+                        
+                        <div class="nav-actions">
+                            <div class="language-selector">
+                                <button id="language-btn" class="language-button">
+                                    🌐 <span id="current-language">English</span>
+                                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6,9 12,15 18,9"></polyline>
+                                    </svg>
+                                </button>
+                                <div id="language-dropdown" class="language-dropdown">
+                                    <div class="language-option" data-lang="en">🇬🇧 English</div>
+                                    <div class="language-option" data-lang="hi">🇮🇳 हिंदी</div>
+                                    <div class="language-option" data-lang="bn">🇧🇩 বাংলা</div>
+                                    <div class="language-option" data-lang="te">🇮🇳 తెలుగు</div>
+                                    <div class="language-option" data-lang="mr">🇮🇳 मराठी</div>
+                                    <div class="language-option" data-lang="ta">🇮🇳 தமிழ்</div>
+                                    <div class="language-option" data-lang="gu">🇮🇳 ગુજરાતી</div>
+                                    <div class="language-option" data-lang="kn">🇮🇳 ಕನ್ನಡ</div>
+                                    <div class="language-option" data-lang="ml">🇮🇳 മലയാളം</div>
+                                    <div class="language-option" data-lang="pa">🇮🇳 ਪੰਜਾਬੀ</div>
+                                    <div class="language-option" data-lang="or">🇮🇳 ଓଡ଼ିଆ</div>
+                                    <div class="language-option" data-lang="as">🇮🇳 অসমীয়া</div>
+                                    <div class="language-option" data-lang="ur">🇵🇰 اردو</div>
+                                </div>
+                            </div>
+                            
+                            <div class="auth-buttons">
+                                <button class="btn btn-outline" id="customer-login-btn" data-translate="customer">Customer</button>
+                                <button class="btn btn-outline" id="worker-login-btn" data-translate="worker">Worker</button>
+                                <button class="btn btn-primary" id="admin-login-btn" data-translate="admin">Admin</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="main-content">
+            <!-- Homepage Content -->
+            <div id="homepage" class="page active">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <div class="hero-badge">
+                                    <span data-translate="smartPlatform">Smart Platform</span>
+                                </div>
+                                <h1 class="hero-title">
+                                    <span data-translate="connectWithSkilled">Connect with Skilled Workers</span>
+                                    <span class="highlight" data-translate="instantly">Instantly</span>
+                                </h1>
+                                <p class="hero-description" data-translate="heroDescription">
+                                    WORQELY revolutionizes how you find skilled workers. Our intelligent platform connects you with verified professionals across 15+ service categories in seconds, available in 12 Indian languages.
+                                </p>
+                                
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary btn-large" id="find-workers-btn">
+                                        <span data-translate="findWorkers">Find Workers Now</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="m9 18 6-6-6-6"/>
+                                        </svg>
+                                    </button>
+                                    <button class="btn btn-secondary btn-large" id="become-worker-btn">
+                                        <span data-translate="becomeWorker">Become a Worker</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="contact-info">
+                                    <div class="contact-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                        </svg>
+                                        <span data-translate="contact">Contact: 8340 315 955</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                            <polyline points="22,6 12,13 2,6"/>
+                                        </svg>
+                                        <span data-translate="email">Email: worqley@gmail.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="hero-visual">
+                                <div class="hero-image">
+                                    <img src="https://images.unsplash.com/photo-1581092795442-9b15c8c3dd07?w=600&h=400&fit=crop&crop=center" alt="Workers connecting" class="main-image">
+                                    <div class="floating-card card-1">
+                                        <div class="card-icon">⚡</div>
+                                        <div class="card-content">
+                                            <div class="card-title" data-translate="instantMatching">Instant Matching</div>
+                                            <div class="card-subtitle">2 min</div>
+                                        </div>
+                                    </div>
+                                    <div class="floating-card card-2">
+                                        <div class="card-icon">✅</div>
+                                        <div class="card-content">
+                                            <div class="card-title" data-translate="verifiedWorkers">100% Verified Workers</div>
+                                            <div class="card-subtitle">Safe & Secure</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Trust Indicators -->
+                <section class="trust-section">
+                    <div class="container">
+                        <div class="trust-grid">
+                            <div class="trust-item">
+                                <div class="trust-icon">🛡️</div>
+                                <span data-translate="support">24/7 Support</span>
+                            </div>
+                            <div class="trust-item">
+                                <div class="trust-icon">✅</div>
+                                <span data-translate="verifiedWorkers">100% Verified Workers</span>
+                            </div>
+                            <div class="trust-item">
+                                <div class="trust-icon">⚡</div>
+                                <span data-translate="instantMatching">Instant Matching</span>
+                            </div>
+                            <div class="trust-item">
+                                <div class="trust-icon">💰</div>
+                                <span data-translate="fairPricing">Fair Pricing</span>
+                            </div>
+                            <div class="trust-item">
+                                <div class="trust-icon">⭐</div>
+                                <span data-translate="qualityGuarantee">Quality Guarantee</span>
+                            </div>
+                            <div class="trust-item">
+                                <div class="trust-icon">🔒</div>
+                                <span data-translate="secureAndSafe">Secure & Safe</span>
+                            </div>
+                        </div>
+                        <div class="trust-tagline">
+                            <h2 data-translate="trustedPlatform">India's Most Trusted Service Platform</h2>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Statistics Section -->
+                <section class="stats-section">
+                    <div class="container">
+                        <div class="stats-header">
+                            <h2 data-translate="trustedByThousands">Trusted by Thousands</h2>
+                            <p data-translate="joinCommunity">Join our growing community of satisfied customers and skilled workers</p>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">50,000+</div>
+                                <div class="stat-label" data-translate="verifiedWorkersCount">Verified Workers</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2,00,000+</div>
+                                <div class="stat-label" data-translate="jobsCompleted">Jobs Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4.8/5</div>
+                                <div class="stat-label" data-translate="averageRating">Average Rating</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label" data-translate="citiesCovered">Cities Covered</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="about-section">
+                    <div class="container">
+                        <div class="about-content">
+                            <div class="about-text">
+                                <h2 data-translate="about">About WORQELY</h2>
+                                <p data-translate="aboutDescription">
+                                    WORQELY is India's leading intelligent platform that bridges the gap between customers and skilled workers. We leverage cutting-edge technology to ensure instant, reliable connections while maintaining the highest standards of safety and quality.
+                                </p>
+                                
+                                <div class="features-list">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">⚡</div>
+                                        <div class="feature-content">
+                                            <h4 data-translate="instantMatching">Instant Matching</h4>
+                                            <p data-translate="instantMatchingDesc">Our smart algorithm matches you with the perfect worker in seconds</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <div class="feature-icon">✅</div>
+                                        <div class="feature-content">
+                                            <h4 data-translate="verifiedWorkers">100% Verified Workers</h4>
+                                            <p data-translate="verifiedWorkersDesc">All workers undergo thorough Aadhaar verification and background checks</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🛡️</div>
+                                        <div class="feature-content">
+                                            <h4 data-translate="trustAndSafety">Trust & Safety</h4>
+                                            <p data-translate="trustAndSafetyDesc">Built-in insurance, secure payments, and 24/7 customer support</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="leadership-info">
+                                    <h3 data-translate="ourLeadership">Our Leadership</h3>
+                                    <div class="leader-info">
+                                        <p data-translate="founderInfo">Founder: Ritik Kumar | Contact: 8340 315 955 | Email: ritiksharma8340031@gmail.com</p>
+                                        <p data-translate="cofounderInfo">Co-founder: Rishi Jain | Contact: 8769392447 | Email: rishijain09414@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="about-visual">
+                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&h=600&fit=crop&crop=center" alt="About WORQELY" class="about-image">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How It Works Section -->
+                <section id="how-it-works" class="how-it-works-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 data-translate="howWorqelyWorks">How WORQELY Works</h2>
+                            <p data-translate="howWorqelyWorksDesc">Get connected with skilled workers in just 3 simple steps. Our intelligent platform makes it seamless and efficient.</p>
+                        </div>
+                        
+                        <div class="steps-grid">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-icon">📞</div>
+                                <h3 data-translate="connectInstantly">Connect Instantly</h3>
+                                <p data-translate="connectInstantlyDesc">Simply call or use our platform to describe your service needs. Our system understands you in 12 Indian languages.</p>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-icon">🎯</div>
+                                <h3 data-translate="getInstantMatches">Get Instant Matches</h3>
+                                <p data-translate="getInstantMatchesDesc">Our system instantly matches you with verified workers in your area based on your requirements and budget.</p>
+                            </div>
+                            
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-icon">🤝</div>
+                                <h3 data-translate="connectAndComplete">Connect & Complete</h3>
+                                <p data-translate="connectAndCompleteDesc">Connect directly with workers, schedule your service, and get the job done with complete transparency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Service Categories Section -->
+                <section id="services" class="services-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 data-translate="ourServiceCategories">Our Service Categories</h2>
+                            <p data-translate="professionalServices">Professional services across multiple categories with verified experts</p>
+                        </div>
+                        
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">⚡</div>
+                                <h3 data-translate="electrical">Electrical</h3>
+                                <p data-translate="electricalDesc">Wiring, Repairs</p>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">🔧</div>
+                                <h3 data-translate="plumbing">Plumbing</h3>
+                                <p data-translate="plumbingDesc">Pipes, Installation</p>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">🏗️</div>
+                                <h3 data-translate="construction">Construction</h3>
+                                <p data-translate="constructionDesc">Mason, Labor</p>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">🎨</div>
+                                <h3 data-translate="painting">Painting</h3>
+                                <p data-translate="paintingDesc">Interior, Exterior</p>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">🧹</div>
+                                <h3 data-translate="cleaning">Cleaning</h3>
+                                <p data-translate="cleaningDesc">Deep Clean</p>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">👨‍🍳</div>
+                                <h3 data-translate="cooking">Cooking</h3>
+                                <p data-translate="cookingDesc">Chef, Home Cook</p>
+                            </div>
+                        </div>
+                        
+                        <div class="services-action">
+                            <button class="btn btn-outline" data-translate="viewAllCategories">View All 15+ Categories</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="features-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 data-translate="whyChooseWorqely">Why Choose WORQELY?</h2>
+                            <p data-translate="experienceFuture">Experience the future of service booking with our intelligent platform designed for India's diverse workforce</p>
+                        </div>
+                        
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">🧠</div>
+                                <h3 data-translate="smartConnect">Smart Connect</h3>
+                                <p data-translate="smartConnectDesc">Intelligent platform that understands your needs in 12 Indian languages and connects you with the right workers instantly.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">✅</div>
+                                <h3 data-translate="verifiedWorkersTitle">100% Verified Workers</h3>
+                                <p data-translate="verifiedWorkersFeatureDesc">All workers undergo thorough Aadhaar verification, background checks, and skill assessments for your safety and peace of mind.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">💰</div>
+                                <h3 data-translate="fairPricing">Fair Pricing</h3>
+                                <p data-translate="fairPricingDesc">Transparent, competitive pricing with no hidden costs. See upfront rates and choose what works for your budget.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3 data-translate="quickResponse">Quick Response</h3>
+                                <p data-translate="quickResponseDesc">Get matched with available workers within minutes. Our system ensures you're connected to professionals ready to work.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">⭐</div>
+                                <h3 data-translate="qualityGuarantee">Quality Guarantee</h3>
+                                <p data-translate="qualityGuaranteeDesc">100% satisfaction guarantee with our quality assurance program. Rate workers and get refunds if not satisfied.</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">🛡️</div>
+                                <h3 data-translate="support">24/7 Support</h3>
+                                <p data-translate="supportDesc">Round-the-clock customer support in multiple languages to help you with any queries, issues, or emergencies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonials Section -->
+                <section id="testimonials" class="testimonials-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 data-translate="testimonials">What Our Users Say</h2>
+                            <p data-translate="realStories">Real stories from satisfied customers and successful workers</p>
+                        </div>
+                        
+                        <div class="testimonials-grid">
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">"</div>
+                                    <p data-translate="testimonial1">WORQELY's platform understood my Hindi perfectly and found me an excellent plumber within 5 minutes. The service was outstanding and the pricing was very fair!</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">👨</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Rajesh Kumar</div>
+                                        <div class="author-role" data-translate="customerTitle">Customer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">"</div>
+                                    <p data-translate="testimonial2">As a worker, WORQELY has transformed my income. I get regular work opportunities, fair payments, and the app is so easy to use. Highly recommended!</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">👩</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Priya Sharma</div>
+                                        <div class="author-role" data-translate="electricianTitle">Electrician</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">"</div>
+                                    <p data-translate="testimonial3">The verification process gives me complete confidence. All workers are genuine, skilled, and professional. Best platform for home services in India!</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">👨</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Amit Patel</div>
+                                        <div class="author-role" data-translate="customerTitle">Customer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Call to Action Section -->
+                <section class="cta-section">
+                    <div class="container">
+                        <div class="cta-content">
+                            <h2 data-translate="readyToStart">Ready to Get Started?</h2>
+                            <p data-translate="joinThousands">Join thousands of satisfied customers and skilled workers on India's most trusted service platform</p>
+                            
+
+                            
+                            <div class="cta-contact">
+                                <p data-translate="needHelp">Need help? Contact us:</p>
+                                <div class="contact-details">
+                                    <span>📞 8340 315 955</span>
+                                    <span>✉️ worqley@gmail.com</span>
+                                </div>
+                                <p class="availability" data-translate="available24x7">Available 24/7 in 12 Indian languages</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Login/Signup Pages (Initially Hidden) -->
+            <div id="customer-login" class="page auth-page">
+                <div class="auth-container">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <h2 data-translate="customer">Customer Login</h2>
+                            <p>Access your account to find skilled workers</p>
+                        </div>
+                        <form id="customer-login-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="customer-email" data-translate="email">Email</label>
+                                <input type="email" id="customer-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-password">Password</label>
+                                <input type="password" id="customer-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" data-translate="login">Login</button>
+                        </form>
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="#" id="customer-signup-link" data-translate="signup">Sign Up</a></p>
+                            <a href="#" id="back-to-home" data-translate="back">← Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="customer-signup" class="page auth-page">
+                <div class="auth-container">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <h2 data-translate="customer">Customer Signup</h2>
+                            <p>Create an account to find skilled workers</p>
+                        </div>
+                        <form id="customer-signup-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="customer-signup-name">Full Name</label>
+                                <input type="text" id="customer-signup-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-signup-email" data-translate="email">Email</label>
+                                <input type="email" id="customer-signup-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-signup-mobile">Mobile</label>
+                                <input type="tel" id="customer-signup-mobile" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-signup-password">Password</label>
+                                <input type="password" id="customer-signup-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" data-translate="signup">Sign Up</button>
+                        </form>
+                        <div class="auth-footer">
+                            <p>Already have an account? <a href="#" id="customer-login-link" data-translate="login">Login</a></p>
+                            <a href="#" id="back-to-home-signup" data-translate="back">← Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Worker Login/Signup Pages -->
+            <div id="worker-login" class="page auth-page">
+                <div class="auth-container">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <h2 data-translate="worker">Worker Login</h2>
+                            <p>Access your account to find work opportunities</p>
+                        </div>
+                        <form id="worker-login-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="worker-email" data-translate="email">Email</label>
+                                <input type="email" id="worker-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="worker-password">Password</label>
+                                <input type="password" id="worker-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" data-translate="login">Login</button>
+                        </form>
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="#" id="worker-signup-link" data-translate="signup">Sign Up</a></p>
+                            <a href="#" id="back-to-home-worker" data-translate="back">← Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="worker-signup" class="page auth-page">
+                <div class="auth-container">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <h2 data-translate="worker">Worker Signup</h2>
+                            <p>Join our platform to find work opportunities</p>
+                        </div>
+                        <form id="worker-signup-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="worker-signup-name">Full Name</label>
+                                <input type="text" id="worker-signup-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="worker-signup-email" data-translate="email">Email</label>
+                                <input type="email" id="worker-signup-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="worker-signup-mobile">Mobile</label>
+                                <input type="tel" id="worker-signup-mobile" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="worker-category">Work Category</label>
+                                <select id="worker-category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="electrical">Electrical</option>
+                                    <option value="plumbing">Plumbing</option>
+                                    <option value="construction">Construction</option>
+                                    <option value="painting">Painting</option>
+                                    <option value="cleaning">Cleaning</option>
+                                    <option value="cooking">Cooking</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="worker-signup-password">Password</label>
+                                <input type="password" id="worker-signup-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" data-translate="signup">Sign Up</button>
+                        </form>
+                        <div class="auth-footer">
+                            <p>Already have an account? <a href="#" id="worker-login-link" data-translate="login">Login</a></p>
+                            <a href="#" id="back-to-home-worker-signup" data-translate="back">← Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Login Page -->
+            <div id="admin-login" class="page auth-page">
+                <div class="auth-container">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <h2 data-translate="admin">Admin Login</h2>
+                            <p>Access admin panel</p>
+                        </div>
+                        <form id="admin-login-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="admin-email" data-translate="email">Email</label>
+                                <input type="email" id="admin-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="admin-password">Password</label>
+                                <input type="password" id="admin-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" data-translate="login">Login</button>
+                        </form>
+                        <div class="auth-footer">
+                            <a href="#" id="back-to-home-admin" data-translate="back">← Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Pages -->
+            <div id="customer-dashboard" class="page dashboard-page">
+                <div class="dashboard-container">
+                    <aside class="dashboard-sidebar">
+                        <div class="sidebar-header">
+                            <div class="logo">
+                                <div class="handshake-icon">🤝</div>
+                                <span class="brand-name">WORQELY</span>
+                            </div>
+                        </div>
+                        <nav class="sidebar-nav">
+                            <a href="#" class="nav-item active" data-page="dashboard" data-translate="dashboard">Dashboard</a>
+                            <a href="#" class="nav-item" data-page="find-workers" data-translate="findWorkers">Find Workers</a>
+                            <a href="#" class="nav-item" data-page="booking-history" data-translate="history">Booking History</a>
+                            <a href="#" class="nav-item" data-page="payments" data-translate="payments">Payments</a>
+                            <a href="#" class="nav-item" data-page="profile" data-translate="profile">Profile</a>
+                            <a href="#" class="nav-item" data-page="support" data-translate="support">Support</a>
+                        </nav>
+                        <div class="sidebar-footer">
+                            <button class="btn btn-outline" id="customer-logout" data-translate="logout">Logout</button>
+                        </div>
+                    </aside>
+                    
+                    <main class="dashboard-main">
+                        <div class="dashboard-header">
+                            <h1>Welcome, <span id="customer-name">Customer</span>!</h1>
+                            <div class="header-actions">
+                                <div class="language-selector">
+                                    <button id="dashboard-language-btn" class="language-button">
+                                        🌐 <span id="dashboard-current-language">English</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-content">
+                            <div class="stats-row">
+                                <div class="stat-card">
+                                    <div class="stat-icon">📋</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">5</div>
+                                        <div class="stat-label" data-translate="jobsCompleted">Jobs Completed</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">⭐</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">4.8</div>
+                                        <div class="stat-label" data-translate="averageRating">Average Rating</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">💰</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">₹12,500</div>
+                                        <div class="stat-label">Total Spent</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-grid">
+                                <div class="dashboard-card">
+                                    <h3 data-translate="findWorkers">Find Workers</h3>
+                                    <p>Search for skilled workers in your area</p>
+                                    <button class="btn btn-primary" data-translate="search">Search Now</button>
+                                </div>
+                                
+                                <div class="dashboard-card">
+                                    <h3 data-translate="history">Recent Bookings</h3>
+                                    <div class="booking-list">
+                                        <div class="booking-item">
+                                            <div class="booking-info">
+                                                <div class="booking-title">Electrical Repair</div>
+                                                <div class="booking-date">Yesterday</div>
+                                            </div>
+                                            <div class="booking-status completed">Completed</div>
+                                        </div>
+                                        <div class="booking-item">
+                                            <div class="booking-info">
+                                                <div class="booking-title">Plumbing Work</div>
+                                                <div class="booking-date">3 days ago</div>
+                                            </div>
+                                            <div class="booking-status completed">Completed</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            <div id="worker-dashboard" class="page dashboard-page">
+                <div class="dashboard-container">
+                    <aside class="dashboard-sidebar">
+                        <div class="sidebar-header">
+                            <div class="logo">
+                                <div class="handshake-icon">🤝</div>
+                                <span class="brand-name">WORQELY</span>
+                            </div>
+                        </div>
+                        <nav class="sidebar-nav">
+                            <a href="#" class="nav-item active" data-page="dashboard" data-translate="dashboard">Dashboard</a>
+                            <a href="#" class="nav-item" data-page="available-tasks" data-translate="search">Available Tasks</a>
+                            <a href="#" class="nav-item" data-page="work-history" data-translate="history">Work History</a>
+                            <a href="#" class="nav-item" data-page="earnings" data-translate="payments">Earnings</a>
+                            <a href="#" class="nav-item" data-page="profile" data-translate="profile">Profile</a>
+                            <a href="#" class="nav-item" data-page="support" data-translate="support">Support</a>
+                        </nav>
+                        <div class="sidebar-footer">
+                            <button class="btn btn-outline" id="worker-logout" data-translate="logout">Logout</button>
+                        </div>
+                    </aside>
+                    
+                    <main class="dashboard-main">
+                        <div class="dashboard-header">
+                            <h1>Welcome, <span id="worker-name">Worker</span>!</h1>
+                            <div class="header-actions">
+                                <div class="availability-toggle">
+                                    <label class="toggle-label">
+                                        <input type="checkbox" id="availability-switch" checked>
+                                        <span class="toggle-slider"></span>
+                                        <span class="toggle-text">Available</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-content">
+                            <div class="stats-row">
+                                <div class="stat-card">
+                                    <div class="stat-icon">💰</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">₹25,000</div>
+                                        <div class="stat-label">Total Earnings</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">📋</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">23</div>
+                                        <div class="stat-label" data-translate="jobsCompleted">Jobs Completed</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">⭐</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">4.9</div>
+                                        <div class="stat-label" data-translate="averageRating">Average Rating</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-grid">
+                                <div class="dashboard-card">
+                                    <h3>Available Tasks</h3>
+                                    <div class="task-list">
+                                        <div class="task-item">
+                                            <div class="task-info">
+                                                <div class="task-title">Electrical Repair Needed</div>
+                                                <div class="task-location">📍 Sector 15, Gurgaon</div>
+                                                <div class="task-budget">💰 ₹800 - ₹1200</div>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm">Apply</button>
+                                        </div>
+                                        <div class="task-item">
+                                            <div class="task-info">
+                                                <div class="task-title">Home Cleaning</div>
+                                                <div class="task-location">📍 DLF Phase 2</div>
+                                                <div class="task-budget">💰 ₹500 - ₹800</div>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm">Apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="dashboard-card">
+                                    <h3>Recent Activity</h3>
+                                    <div class="activity-list">
+                                        <div class="activity-item">
+                                            <div class="activity-icon">✅</div>
+                                            <div class="activity-info">
+                                                <div class="activity-title">Job Completed</div>
+                                                <div class="activity-date">2 hours ago</div>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon">💰</div>
+                                            <div class="activity-info">
+                                                <div class="activity-title">Payment Received</div>
+                                                <div class="activity-date">5 hours ago</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            <div id="admin-panel" class="page dashboard-page">
+                <div class="dashboard-container">
+                    <aside class="dashboard-sidebar">
+                        <div class="sidebar-header">
+                            <div class="logo">
+                                <div class="handshake-icon">🤝</div>
+                                <span class="brand-name">WORQELY</span>
+                            </div>
+                        </div>
+                        <nav class="sidebar-nav">
+                            <a href="#" class="nav-item active" data-page="dashboard" data-translate="dashboard">Dashboard</a>
+                            <a href="#" class="nav-item" data-page="users">Users</a>
+                            <a href="#" class="nav-item" data-page="workers">Workers</a>
+                            <a href="#" class="nav-item" data-page="tasks">Tasks</a>
+                            <a href="#" class="nav-item" data-page="analytics">Analytics</a>
+                            <a href="#" class="nav-item" data-page="settings" data-translate="settings">Settings</a>
+                        </nav>
+                        <div class="sidebar-footer">
+                            <button class="btn btn-outline" id="admin-logout" data-translate="logout">Logout</button>
+                        </div>
+                    </aside>
+                    
+                    <main class="dashboard-main">
+                        <div class="dashboard-header">
+                            <h1 data-translate="admin">Admin Panel</h1>
+                        </div>
+                        
+                        <div class="dashboard-content">
+                            <div class="stats-row">
+                                <div class="stat-card">
+                                    <div class="stat-icon">👥</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">1,250</div>
+                                        <div class="stat-label">Total Users</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">🔧</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">850</div>
+                                        <div class="stat-label">Active Workers</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">📋</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">2,150</div>
+                                        <div class="stat-label">Total Tasks</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">💰</div>
+                                    <div class="stat-info">
+                                        <div class="stat-value">₹5,25,000</div>
+                                        <div class="stat-label">Total Revenue</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="admin-sections">
+                                <div class="admin-card">
+                                    <h3>Recent Users</h3>
+                                    <div class="user-list">
+                                        <div class="user-item">
+                                            <div class="user-avatar">👤</div>
+                                            <div class="user-info">
+                                                <div class="user-name">Rajesh Kumar</div>
+                                                <div class="user-type">Customer</div>
+                                            </div>
+                                            <div class="user-status active">Active</div>
+                                        </div>
+                                        <div class="user-item">
+                                            <div class="user-avatar">👤</div>
+                                            <div class="user-info">
+                                                <div class="user-name">Priya Sharma</div>
+                                                <div class="user-type">Worker</div>
+                                            </div>
+                                            <div class="user-status active">Active</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="admin-card">
+                                    <h3>Recent Tasks</h3>
+                                    <div class="task-list">
+                                        <div class="task-item">
+                                            <div class="task-info">
+                                                <div class="task-title">Electrical Repair</div>
+                                                <div class="task-customer">By: Amit Patel</div>
+                                            </div>
+                                            <div class="task-status completed">Completed</div>
+                                        </div>
+                                        <div class="task-item">
+                                            <div class="task-info">
+                                                <div class="task-title">Home Cleaning</div>
+                                                <div class="task-customer">By: Sunita Devi</div>
+                                            </div>
+                                            <div class="task-status in-progress">In Progress</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="main-footer" class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <div class="logo">
+                                <div class="handshake-icon">🤝</div>
+                                <span class="brand-name">WORQELY</span>
+                            </div>
+                            <p data-translate="footerDescription">India's first AI-powered platform connecting customers with skilled workers. Safe, verified, and efficient.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link">📘</a>
+                                <a href="#" class="social-link">📷</a>
+                                <a href="#" class="social-link">🐦</a>
+                                <a href="#" class="social-link">💼</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-translate="forCustomers">For Customers</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" data-translate="findWorkersLink">Find Workers</a></li>
+                            <li><a href="#" data-translate="serviceCategoriesLink">Service Categories</a></li>
+                            <li><a href="#" data-translate="pricing">Pricing</a></li>
+                            <li><a href="#" data-translate="safetyGuarantee">Safety Guarantee</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-translate="forWorkers">For Workers</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" data-translate="joinAsWorker">Join as Worker</a></li>
+                            <li><a href="#" data-translate="workerBenefits">Worker Benefits</a></li>
+                            <li><a href="#" data-translate="trainingPrograms">Training Programs</a></li>
+                            <li><a href="#" data-translate="insuranceCoverage">Insurance Coverage</a></li>
+                            <li><a href="#" data-translate="premiumMembership">Premium Membership</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-translate="helpCenter">Help Center</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" data-translate="contactUs">Contact Us</a></li>
+                            <li><a href="#" data-translate="faq">FAQ</a></li>
+                            <li><a href="#" data-translate="reportIssue">Report Issue</a></li>
+                            <li><a href="#" data-translate="privacyPolicy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p>&copy; 2024 WORQELY. <span data-translate="allRightsReserved">All rights reserved. | Made with ❤️ in India</span></p>
+                        <p class="footer-tagline" data-translate="connectingIndia">Connecting India's workforce through technology</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
