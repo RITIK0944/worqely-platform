@@ -4,10 +4,10 @@ import { Badge } from './ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { 
-  CheckCircle, 
-  Clock, 
-  DollarSign, 
+import {
+  CheckCircle,
+  Clock,
+  DollarSign,
   TrendingUp,
   Users,
   Shield,
@@ -21,6 +21,9 @@ import {
   ShoppingCart
 } from 'lucide-react';
 import { User as UserType, useLanguage } from '../App';
+import { LanguageSelector } from './LanguageSelector';
+import { useNotifications } from '../contexts/NotificationContext';
+import { NotificationPanel } from './NotificationPanel';
 
 // Lazy load worker components
 const AvailableTasks = lazy(() => import('./labor/AvailableTasks').then(module => ({ default: module.AvailableTasks })));
@@ -42,7 +45,9 @@ interface WorkerDashboardProps {
 
 export function LaborDashboard({ user, onLogout }: WorkerDashboardProps) {
   const { t } = useLanguage();
+  const { unreadCount } = useNotifications();
   const [activeTab, setActiveTab] = useState('tasks');
+  const [showNotifications, setShowNotifications] = useState(false);
 
   if (!user) return null;
 
@@ -69,11 +74,21 @@ export function LaborDashboard({ user, onLogout }: WorkerDashboardProps) {
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <LanguageSelector variant="compact" />
               <div className="relative">
-                <Bell className="h-5 w-5 text-muted-foreground" />
-                <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
-                  3
-                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setShowNotifications(!showNotifications)}
+                  className="relative"
+                >
+                  <Bell className="h-5 w-5 text-muted-foreground" />
+                  {unreadCount > 0 && (
+                    <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
+                      {unreadCount > 9 ? '9+' : unreadCount}
+                    </span>
+                  )}
+                </Button>
               </div>
               <Button variant="outline" size="sm" onClick={onLogout}>
                 <LogOut className="h-4 w-4 mr-2" />
@@ -84,75 +99,81 @@ export function LaborDashboard({ user, onLogout }: WorkerDashboardProps) {
         </div>
       </header>
 
+      {/* Notification Panel */}
+      <NotificationPanel
+        isOpen={showNotifications}
+        onClose={() => setShowNotifications(false)}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <div className="bg-white rounded-lg shadow-sm border p-2">
             <TabsList className="flex w-full h-auto bg-transparent gap-1 overflow-x-auto">
-              <TabsTrigger 
-                value="tasks" 
+              <TabsTrigger
+                value="tasks"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <CheckCircle className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">Tasks</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="profile" 
+              <TabsTrigger
+                value="profile"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <Settings className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">Profile</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="shifts" 
+              <TabsTrigger
+                value="shifts"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <Clock className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">Shifts</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="earnings" 
+              <TabsTrigger
+                value="earnings"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <DollarSign className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">Earnings</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="history" 
+              <TabsTrigger
+                value="history"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <Calendar className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">History</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="ecommerce" 
+              <TabsTrigger
+                value="ecommerce"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <ShoppingCart className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">E-Commerce</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="shg" 
+              <TabsTrigger
+                value="shg"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <Users className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">SHG</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="insurance" 
+              <TabsTrigger
+                value="insurance"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <Shield className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">Insurance</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="premium" 
+              <TabsTrigger
+                value="premium"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <Crown className="h-5 w-5 mb-1" />
                 <span className="text-xs font-medium">Premium</span>
               </TabsTrigger>
-              <TabsTrigger 
-                value="support" 
+              <TabsTrigger
+                value="support"
                 className="flex flex-col items-center justify-center min-w-[80px] h-16 p-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-200 hover:bg-muted"
               >
                 <Headphones className="h-5 w-5 mb-1" />
@@ -186,7 +207,7 @@ export function LaborDashboard({ user, onLogout }: WorkerDashboardProps) {
                     </Suspense>
                   </CardContent>
                 </Card>
-                
+
                 {/* Full Task Board */}
                 <TaskBoard user={user} onApplyToTask={handleApplyToTask} />
               </div>
