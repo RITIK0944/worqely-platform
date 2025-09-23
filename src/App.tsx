@@ -5,6 +5,7 @@ import React, {
   Suspense,
   lazy,
 } from "react";
+import { NotificationProvider } from './contexts/NotificationContext';
 
 // Lazy load components to prevent initial load timeout
 const Homepage = lazy(() =>
@@ -38,8 +39,8 @@ const CustomerDashboard = lazy(() =>
   })),
 );
 const WorkerDashboard = lazy(() =>
-  import("./components/WorkerDashboard").then((module) => ({
-    default: module.WorkerDashboard,
+  import("./components/LaborDashboard").then((module) => ({
+    default: module.LaborDashboard,
   })),
 );
 const AdminPanel = lazy(() =>
@@ -147,7 +148,7 @@ const translations: Record<Language, Record<string, string>> = {
     signup: "Sign Up",
     admin: "Admin",
     logout: "Logout",
-    
+
     // Header and navigation
     findWorkers: "Find Workers Now",
     becomeWorker: "Become a Worker",
@@ -157,13 +158,13 @@ const translations: Record<Language, Record<string, string>> = {
     services: "Our Services",
     howItWorks: "How It Works",
     testimonials: "What Our Users Say",
-    
+
     // Hero section
     smartPlatform: "Smart Platform",
     connectWithSkilled: "Connect with Skilled Workers",
     instantly: "Instantly",
     heroDescription: "WORQELY revolutionizes how you find skilled workers. Our intelligent platform connects you with verified professionals across 15+ service categories in seconds, available in 12 Indian languages.",
-    
+
     // Trust indicators
     support: "24/7 Support",
     verifiedWorkers: "100% Verified Workers",
@@ -172,7 +173,7 @@ const translations: Record<Language, Record<string, string>> = {
     qualityGuarantee: "Quality Guarantee",
     secureAndSafe: "Secure & Safe",
     trustedPlatform: "India's Most Trusted Service Platform",
-    
+
     // Statistics
     trustedByThousands: "Trusted by Thousands",
     joinCommunity: "Join our growing community of satisfied customers and skilled workers",
@@ -180,7 +181,7 @@ const translations: Record<Language, Record<string, string>> = {
     jobsCompleted: "Jobs Completed",
     averageRating: "Average Rating",
     citiesCovered: "Cities Covered",
-    
+
     // About section
     aboutDescription: "WORQELY is India's leading intelligent platform that bridges the gap between customers and skilled workers. We leverage cutting-edge technology to ensure instant, reliable connections while maintaining the highest standards of safety and quality.",
     instantMatchingDesc: "Our smart algorithm matches you with the perfect worker in seconds",
@@ -190,7 +191,7 @@ const translations: Record<Language, Record<string, string>> = {
     ourLeadership: "Our Leadership",
     founderInfo: "Founder: Ritik Kumar | Contact: 8340 315 955 | Email: ritiksharma8340031@gmail.com",
     cofounderInfo: "Co-founder: Rishi Jain | Contact: 8769392447 | Email: rishijain09414@gmail.com",
-    
+
     // How it works
     howWorqelyWorks: "How WORQELY Works",
     howWorqelyWorksDesc: "Get connected with skilled workers in just 3 simple steps. Our intelligent platform makes it seamless and efficient.",
@@ -200,7 +201,7 @@ const translations: Record<Language, Record<string, string>> = {
     getInstantMatchesDesc: "Our system instantly matches you with verified workers in your area based on your requirements and budget.",
     connectAndComplete: "Connect & Complete",
     connectAndCompleteDesc: "Connect directly with workers, schedule your service, and get the job done with complete transparency.",
-    
+
     // Service categories
     ourServiceCategories: "Our Service Categories",
     professionalServices: "Professional services across multiple categories with verified experts",
@@ -217,7 +218,7 @@ const translations: Record<Language, Record<string, string>> = {
     cleaningDesc: "Deep Clean",
     cooking: "Cooking",
     cookingDesc: "Chef, Home Cook",
-    
+
     // Features
     whyChooseWorqely: "Why Choose WORQELY?",
     experienceFuture: "Experience the future of service booking with our intelligent platform designed for India's diverse workforce",
@@ -230,7 +231,7 @@ const translations: Record<Language, Record<string, string>> = {
     quickResponseDesc: "Get matched with available workers within minutes. Our system ensures you're connected to professionals ready to work.",
     qualityGuaranteeDesc: "100% satisfaction guarantee with our quality assurance program. Rate workers and get refunds if not satisfied.",
     supportDesc: "Round-the-clock customer support in multiple languages to help you with any queries, issues, or emergencies.",
-    
+
     // Testimonials
     realStories: "Real stories from satisfied customers and successful workers",
     testimonial1: "WORQELY's platform understood my Hindi perfectly and found me an excellent plumber within 5 minutes. The service was outstanding and the pricing was very fair!",
@@ -238,13 +239,13 @@ const translations: Record<Language, Record<string, string>> = {
     testimonial3: "The verification process gives me complete confidence. All workers are genuine, skilled, and professional. Best platform for home services in India!",
     customerTitle: "Customer",
     electricianTitle: "Electrician",
-    
+
     // Call to action
     readyToStart: "Ready to Get Started?",
     joinThousands: "Join thousands of satisfied customers and skilled workers on India's most trusted service platform",
     needHelp: "Need help? Contact us:",
     available24x7: "Available 24/7 in 12 Indian languages",
-    
+
     // Footer
     footerDescription: "India's first AI-powered platform connecting customers with skilled workers. Safe, verified, and efficient.",
     forCustomers: "For Customers",
@@ -265,7 +266,7 @@ const translations: Record<Language, Record<string, string>> = {
     privacyPolicy: "Privacy Policy",
     allRightsReserved: "All rights reserved. | Made with ❤️ in India",
     connectingIndia: "Connecting India's workforce through technology",
-    
+
     // Dashboard navigation
     dashboard: "Dashboard",
     profile: "Profile",
@@ -277,7 +278,7 @@ const translations: Record<Language, Record<string, string>> = {
     issues: "Issues",
     premium: "Premium",
     ecommerce: "E-Commerce",
-    
+
     // Common UI elements
     search: "Search",
     filter: "Filter",
@@ -308,7 +309,7 @@ const translations: Record<Language, Record<string, string>> = {
     signup: "साइन अप",
     admin: "एडमिन",
     logout: "लॉगआउट",
-    
+
     // Header and navigation
     findWorkers: "अभी श्रमिक खोजें",
     becomeWorker: "श्रमिक बनें",
@@ -318,13 +319,13 @@ const translations: Record<Language, Record<string, string>> = {
     services: "हमारी सेवाएं",
     howItWorks: "यह कैसे काम करता है",
     testimonials: "हमारे उपयोगकर्ता क्या कहते हैं",
-    
+
     // Hero section
     smartPlatform: "स्मार्ट प्लेटफॉर्म",
     connectWithSkilled: "कुशल श्रमिकों से जुड़ें",
     instantly: "तुरंत",
     heroDescription: "WORQELY कुशल श्रमिकों को खोजने के तरीके में क्रांति लाता है। हमारा बुद्धिमान प्लेटफॉर्म आपको सेकंडों में 15+ सेवा श्रेणियों में सत्यापित पेशेवरों से जोड़ता है, 12 भारतीय क्षेत्रीय भाषाओं में उपलब्ध है।",
-    
+
     // Trust indicators
     support: "24/7 सहायता",
     verifiedWorkers: "100% सत्यापित श्रमिक",
@@ -333,7 +334,7 @@ const translations: Record<Language, Record<string, string>> = {
     qualityGuarantee: "गुणवत्ता की गारंटी",
     secureAndSafe: "सुरक्षित और सुरक्षित",
     trustedPlatform: "भारत का सबसे विश्वसनीय सेवा प्लेटफॉर्म",
-    
+
     // Statistics
     trustedByThousands: "हजारों द्वारा भरोसा",
     joinCommunity: "संतुष्ट ग्राहकों और कुशल श्रमिकों के हमारे बढ़ते समुदाय में शामिल हों",
@@ -341,7 +342,7 @@ const translations: Record<Language, Record<string, string>> = {
     jobsCompleted: "पूर्ण कार्य",
     averageRating: "औसत रेटिंग",
     citiesCovered: "शहर शामिल",
-    
+
     // About section
     aboutDescription: "WORQELY भारत का अग्रणी बुद्धिमान प्लेटफॉर्म है जो ग्राहकों और कुशल श्रमिकों के बीच की खाई को पाटता है। हम सुरक्षा और गुणवत्ता के उच्चतम मानकों को बनाए रखते हुए तत्काल, विश्वसनीय कनेक्शन सुनिश्चित करने के लिए अत्याधुनिक तकनीक का लाभ उठाते हैं।",
     instantMatchingDesc: "हमारा स्मार्ट एल्गोरिदम आपको सेकंडों में सही श्रमिक से मिलाता है",
@@ -351,7 +352,7 @@ const translations: Record<Language, Record<string, string>> = {
     ourLeadership: "हमारा नेतृत्व",
     founderInfo: "संस्थापक: रितिक कुमार | संपर्क: 8340 315 955 | ईमेल: ritiksharma8340031@gmail.com",
     cofounderInfo: "सह-संस्थापक: ऋषि जैन | संपर्क: 8769392447 | ईमेल: rishijain09414@gmail.com",
-    
+
     // How it works
     howWorqelyWorks: "WORQELY कैसे काम करता है",
     howWorqelyWorksDesc: "केवल 3 सरल चरणों में कुशल श्रमिकों से जुड़ें। हमारा बुद्धिमान प्लेटफॉर्म इसे निर्बाध और कुशल बनाता है।",
@@ -361,7 +362,7 @@ const translations: Record<Language, Record<string, string>> = {
     getInstantMatchesDesc: "हमारा सिस्टम आपकी आवश्यकताओं और बजट के आधार पर आपको तुरंत आपके क्षेत्र में सत्यापित श्रमिकों से मिलाता है।",
     connectAndComplete: "कनेक्ट करें और पूरा करें",
     connectAndCompleteDesc: "श्रमिकों से सीधे जुड़ें, अपनी सेवा शेड्यूल करें, और पूर्ण पारदर्शिता के साथ काम पूरा करवाएं।",
-    
+
     // Service categories
     ourServiceCategories: "हमारी सेवा श्रेणियां",
     professionalServices: "सत्यापित विशेषज्ञों के साथ कई श्रेणियों में पेशेवर सेवाएं",
@@ -378,7 +379,7 @@ const translations: Record<Language, Record<string, string>> = {
     cleaningDesc: "गहरी सफाई",
     cooking: "खाना बनाना",
     cookingDesc: "शेफ, घरेलू रसोइया",
-    
+
     // Features
     whyChooseWorqely: "WORQELY क्यों चुनें?",
     experienceFuture: "भारत के विविध कार्यबल के लिए डिज़ाइन किए गए हमारे बुद्धिमान प्लेटफॉर्म के साथ सेवा बुकिंग के भविष्य का अनुभव करें",
@@ -391,7 +392,7 @@ const translations: Record<Language, Record<string, string>> = {
     quickResponseDesc: "मिनटों में उपलब्ध श्रमिकों से मैच हो जाएं। हमारा सिस्टम सुनिश्चित करता है कि आप काम के लिए तैयार पेशेवरों से जुड़े हों।",
     qualityGuaranteeDesc: "हमारे गुणवत्ता आश्वासन कार्यक्रम के साथ 100% संतुष्टि की गारंटी। श्रमिकों को रेट करें और संतुष्ट नहीं होने पर रिफंड पाएं।",
     supportDesc: "किसी भी प्रश्न, समस्या या आपातकाल में आपकी सहायता के लिए कई भाषाओं में चौबीसों घंटे ग्राहक सहायता।",
-    
+
     // Testimonials
     realStories: "संतुष्ट ग्राहकों और सफल श्रमिकों की वास्तविक कहानियां",
     testimonial1: "WORQELY के प्लेटफॉर्म ने मेरी हिंदी को पूरी तरह से समझा और 5 मिनट में मुझे एक उत्कृष्ट प्लंबर मिल गया। सेवा उत्कृष्ट थी और मूल्य निर्धारण बहुत उचित था!",
@@ -399,13 +400,13 @@ const translations: Record<Language, Record<string, string>> = {
     testimonial3: "सत्यापन प्रक्रिया मुझे पूर्ण विश्वास देती है। सभी श्रमिक वास्तविक, कुशल और पेशेवर हैं। भारत में गृह सेवाओं के लिए सबसे अच्छा प्लेटफॉर्म!",
     customerTitle: "ग्राहक",
     electricianTitle: "इलेक्ट्रीशियन",
-    
+
     // Call to action
     readyToStart: "शुरू करने के लिए तैयार हैं?",
     joinThousands: "भारत के सबसे विश्वसनीय सेवा प्लेटफॉर्म पर हजारों संतुष्ट ग्राहकों और कुशल श्रमिकों से जुड़ें",
     needHelp: "सहायता चाहिए? हमसे संपर्क करें:",
     available24x7: "12 भारतीय भाषाओं में 24/7 उपलब्ध",
-    
+
     // Footer
     footerDescription: "भारत का पहला AI-संचालित प्लेटफॉर्म जो ग्राहकों को कुशल श्रमिकों से जोड़ता है। सुरक्षित, सत्यापित और कुशल।",
     forCustomers: "ग्राहकों के लिए",
@@ -426,7 +427,7 @@ const translations: Record<Language, Record<string, string>> = {
     privacyPolicy: "गोपनीयता नीति",
     allRightsReserved: "सभी अधिकार सुरक्षित। | भारत में ❤️ के साथ बनाया गया",
     connectingIndia: "प्रौद्योगिकी के माध्यम से भारत के कार्यबल को जोड़ना",
-    
+
     // Dashboard navigation
     dashboard: "डैशबोर्ड",
     profile: "प्रोफ़ाइल",
@@ -438,7 +439,7 @@ const translations: Record<Language, Record<string, string>> = {
     issues: "समस्याएं",
     premium: "प्रीमियम",
     ecommerce: "ई-कॉमर्स",
-    
+
     // Common UI elements
     search: "खोजें",
     filter: "फ़िल्टर",
@@ -453,7 +454,6 @@ const translations: Record<Language, Record<string, string>> = {
     back: "वापस",
     next: "अगला",
     previous: "पिछला",
-    submit: "सबमिट करें",
     loading: "लोड हो रहा है...",
     error: "त्रुटि",
     success: "सफलता",

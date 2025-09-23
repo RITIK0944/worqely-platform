@@ -4,18 +4,22 @@ import { Input } from './ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Separator } from './ui/separator';
-import { 
-  Users, 
-  LogOut, 
+import {
+  Users,
+  LogOut,
   Search,
   Shield,
   TrendingUp,
   AlertCircle,
   CheckCircle,
   XCircle,
-  Eye
+  Eye,
+  Bell
 } from 'lucide-react';
-import { User as UserType } from '../App';
+import { User as UserType, useLanguage } from '../App';
+import { LanguageSelector } from './LanguageSelector';
+import { useNotifications } from '../contexts/NotificationContext';
+import { NotificationPanel } from './NotificationPanel';
 
 interface AdminPanelProps {
   user: UserType | null;
@@ -147,8 +151,11 @@ const mockStats = {
 };
 
 export function AdminPanel({ user, onLogout }: AdminPanelProps) {
+  const { t } = useLanguage();
+  const { unreadCount } = useNotifications();
   const [activeTab, setActiveTab] = useState('overview');
   const [searchQuery, setSearchQuery] = useState('');
+  const [showNotifications, setShowNotifications] = useState(false);
 
   // Use mock admin user for demo if not provided
   const currentUser = user || mockAdminUser;
@@ -187,6 +194,22 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
               <h1 className="text-xl text-primary">Admin Panel</h1>
             </div>
             <div className="flex items-center space-x-4">
+              <LanguageSelector variant="compact" />
+              <div className="relative">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setShowNotifications(!showNotifications)}
+                  className="relative"
+                >
+                  <Bell className="h-5 w-5 text-muted-foreground" />
+                  {unreadCount > 0 && (
+                    <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
+                      {unreadCount > 9 ? '9+' : unreadCount}
+                    </span>
+                  )}
+                </Button>
+              </div>
               <span className="text-sm text-muted-foreground">
                 Welcome, {currentUser.fullName}
               </span>
@@ -199,28 +222,34 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
         </div>
       </header>
 
+      {/* Notification Panel */}
+      <NotificationPanel
+        isOpen={showNotifications}
+        onClose={() => setShowNotifications(false)}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Navigation Tabs */}
         <div className="flex space-x-1 mb-8">
-          <Button 
+          <Button
             variant={activeTab === 'overview' ? 'default' : 'outline'}
             onClick={() => setActiveTab('overview')}
           >
             Overview
           </Button>
-          <Button 
+          <Button
             variant={activeTab === 'customers' ? 'default' : 'outline'}
             onClick={() => setActiveTab('customers')}
           >
             Customers ({mockStats.totalCustomers})
           </Button>
-          <Button 
+          <Button
             variant={activeTab === 'laborers' ? 'default' : 'outline'}
             onClick={() => setActiveTab('laborers')}
           >
             Workers ({mockStats.totalLaborers})
           </Button>
-          <Button 
+          <Button
             variant={activeTab === 'bookings' ? 'default' : 'outline'}
             onClick={() => setActiveTab('bookings')}
           >
@@ -309,7 +338,7 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                       <p className="text-sm text-muted-foreground">Amit Singh (Carpenter) pending verification</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
                     <CheckCircle className="h-5 w-5 text-green-500" />
                     <div>
@@ -317,7 +346,7 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                       <p className="text-sm text-muted-foreground">John Doe → Rajesh Kumar (Plumbing) - ₹800</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-3 p-3 bg-orange-50 rounded-lg">
                     <AlertCircle className="h-5 w-5 text-orange-500" />
                     <div>
@@ -348,7 +377,7 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                     className="max-w-sm"
                   />
                 </div>
-                
+
                 <div className="space-y-4">
                   {filteredCustomers.map(customer => (
                     <div key={customer.id} className="flex items-center justify-between p-4 border rounded-lg">
@@ -371,8 +400,8 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                         <p className="text-sm text-muted-foreground">
                           {customer.totalBookings} bookings • Joined {customer.joinDate}
                         </p>
-                        <Button 
-                          size="sm" 
+                        <Button
+                          size="sm"
                           variant="outline"
                           onClick={() => handleViewDetails('customer', customer.id)}
                           className="mt-2"
@@ -406,7 +435,7 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                     className="max-w-sm"
                   />
                 </div>
-                
+
                 <div className="space-y-4">
                   {filteredLaborers.map(laborer => (
                     <div key={laborer.id} className="flex items-center justify-between p-4 border rounded-lg">
@@ -424,7 +453,7 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                       <div className="text-right">
                         <div className="flex items-center space-x-2 mb-2">
                           <Badge variant="secondary">{laborer.workCategory}</Badge>
-                          <Badge 
+                          <Badge
                             variant={laborer.status === 'Verified' ? 'default' : 'destructive'}
                             className={laborer.status === 'Verified' ? 'bg-green-500' : ''}
                           >
@@ -437,16 +466,16 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                         <div className="flex space-x-2">
                           {laborer.status === 'Pending' && (
                             <>
-                              <Button 
-                                size="sm" 
+                              <Button
+                                size="sm"
                                 onClick={() => handleVerifyLaborer(laborer.id)}
                                 className="bg-green-500 hover:bg-green-600"
                               >
                                 <CheckCircle className="h-4 w-4 mr-1" />
                                 Verify
                               </Button>
-                              <Button 
-                                size="sm" 
+                              <Button
+                                size="sm"
                                 variant="destructive"
                                 onClick={() => handleRejectLaborer(laborer.id)}
                               >
@@ -455,8 +484,8 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                               </Button>
                             </>
                           )}
-                          <Button 
-                            size="sm" 
+                          <Button
+                            size="sm"
                             variant="outline"
                             onClick={() => handleViewDetails('laborer', laborer.id)}
                           >
@@ -496,7 +525,7 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                     </div>
                     <div className="text-right">
                       <div className="flex items-center space-x-2 mb-2">
-                        <Badge 
+                        <Badge
                           variant={booking.status === 'Completed' ? 'default' : 'destructive'}
                           className={booking.status === 'Completed' ? 'bg-green-500' : ''}
                         >
@@ -504,8 +533,8 @@ export function AdminPanel({ user, onLogout }: AdminPanelProps) {
                         </Badge>
                         <span className="font-medium">{booking.amount}</span>
                       </div>
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         variant="outline"
                         onClick={() => handleViewDetails('booking', booking.id)}
                       >
