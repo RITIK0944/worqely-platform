@@ -728,7 +728,7 @@ function updateTranslations() {
 // Set language and update UI
 function setLanguage(lang) {
   currentLanguage = lang;
-  localStorage.setItem('worqely-language', lang);
+  localStorage.setItem('worqley-language', lang);
   updateTranslations();
   
   // Close language dropdown
@@ -740,7 +740,7 @@ function setLanguage(lang) {
 
 // Initialize language from localStorage or default to English
 function initializeLanguage() {
-  const savedLanguage = localStorage.getItem('worqely-language');
+  const savedLanguage = localStorage.getItem('worqley-language');
   if (savedLanguage && translations[savedLanguage]) {
     currentLanguage = savedLanguage;
   }

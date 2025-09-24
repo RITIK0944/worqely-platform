@@ -1,1 +1,1 @@
-# worqely-platform
+# worqley-platform

@@ -318,7 +318,7 @@ class WorkelyApp {
       };
       
       // Store user in localStorage
-      localStorage.setItem('worqely-user', JSON.stringify(this.currentUser));
+      localStorage.setItem('worqley-user', JSON.stringify(this.currentUser));
       
       // Navigate to appropriate dashboard
       if (userType === 'customer') {
@@ -351,7 +351,7 @@ class WorkelyApp {
       };
       
       // Store user in localStorage
-      localStorage.setItem('worqely-user', JSON.stringify(this.currentUser));
+      localStorage.setItem('worqley-user', JSON.stringify(this.currentUser));
       
       // Navigate to appropriate dashboard
       if (userType === 'customer') {
@@ -368,7 +368,7 @@ class WorkelyApp {
   
   handleLogout() {
     this.currentUser = null;
-    localStorage.removeItem('worqely-user');
+    localStorage.removeItem('worqley-user');
     this.showPage('homepage');
   }
   
@@ -398,7 +398,7 @@ class WorkelyApp {
   
   // Check for existing user session on page load
   checkExistingSession() {
-    const savedUser = localStorage.getItem('worqely-user');
+    const savedUser = localStorage.getItem('worqley-user');
     if (savedUser) {
       try {
         this.currentUser = JSON.parse(savedUser);
@@ -415,7 +415,7 @@ class WorkelyApp {
         }
       } catch (error) {
         console.error('Error parsing saved user:', error);
-        localStorage.removeItem('worqely-user');
+        localStorage.removeItem('worqley-user');
       }
     }
   }

@@ -12,7 +12,7 @@ class DashboardManager {
   }
   
   loadUserData() {
-    const savedUser = localStorage.getItem('worqely-user');
+    const savedUser = localStorage.getItem('worqley-user');
     if (savedUser) {
       try {
         this.currentUser = JSON.parse(savedUser);

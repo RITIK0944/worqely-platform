@@ -11,14 +11,14 @@ class AuthManager {
   
   // Load user from localStorage
   loadUserFromStorage() {
-    const savedUser = localStorage.getItem('worqely-user');
+    const savedUser = localStorage.getItem('worqley-user');
     if (savedUser) {
       try {
         this.currentUser = JSON.parse(savedUser);
         return this.currentUser;
       } catch (error) {
         console.error('Error parsing saved user:', error);
-        localStorage.removeItem('worqely-user');
+        localStorage.removeItem('worqley-user');
         return null;
       }
     }
@@ -28,7 +28,7 @@ class AuthManager {
   // Save user to localStorage
   saveUserToStorage(user) {
     try {
-      localStorage.setItem('worqely-user', JSON.stringify(user));
+      localStorage.setItem('worqley-user', JSON.stringify(user));
       this.currentUser = user;
       return true;
     } catch (error) {
@@ -218,7 +218,7 @@ class AuthManager {
   // Logout user
   logout() {
     this.currentUser = null;
-    localStorage.removeItem('worqely-user');
+    localStorage.removeItem('worqley-user');
     return true;
   }
   
