@@ -33,6 +33,79 @@ const WorkerSignup = lazy(() =>
     default: module.LaborSignup,
   })),
 );
+
+const renderCurrentPage = () => {
+  const LoadingFallback = () => (
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-muted-foreground">Loading...</p>
+      </div>
+    </div>
+  );
+
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      {(() => {
+        switch (currentPage) {
+          case "home":
+            return <Homepage onNavigate={navigateTo} />;
+          case "customer-login":
+            return (
+              <CustomerLogin
+                onNavigate={navigateTo}
+                onLogin={handleLogin}
+              />
+            );
+          case "customer-signup":
+            return (
+              <CustomerSignup
+                onNavigate={navigateTo}
+                onLogin={handleLogin}
+              />
+            );
+          case "worker-login":
+            return (
+              <WorkerLogin
+                onNavigate={navigateTo}
+                onLogin={handleLogin}
+              />
+            );
+          case "worker-signup":
+            return (
+              <WorkerSignup
+                onNavigate={navigateTo}
+                onLogin={handleLogin}
+              />
+            );
+          case "customer-dashboard":
+            return (
+              <CustomerDashboard
+                user={currentUser}
+                onLogout={handleLogout}
+              />
+            );
+          case "worker-dashboard":
+            return (
+              <WorkerDashboard
+                user={currentUser}
+                onLogout={handleLogout}
+              />
+            );
+          case "admin-panel":
+            return (
+              <AdminPanel
+                user={currentUser}
+                onLogout={handleLogout}
+              />
+            );
+          default:
+            return <Homepage onNavigate={navigateTo} />;
+        }
+      })()}
+    </Suspense>
+  );
+};
 const CustomerDashboard = lazy(() =>
   import("./components/CustomerDashboard").then((module) => ({
     default: module.CustomerDashboard,
@@ -278,6 +351,17 @@ const translations: Record<Language, Record<string, string>> = {
     issues: "Issues",
     premium: "Premium",
     ecommerce: "E-Commerce",
+    tasks: "Tasks",
+    shifts: "Shifts",
+    earnings: "Earnings",
+    service: "Service",
+    bookings: "Bookings",
+    ecom: "E-Com",
+    payment: "Payment",
+    rating: "Rating",
+    shg: "SHG",
+    insurance: "Insurance",
+    support: "Support",
 
     // Common UI elements
     search: "Search",
@@ -439,6 +523,17 @@ const translations: Record<Language, Record<string, string>> = {
     issues: "समस्याएं",
     premium: "प्रीमियम",
     ecommerce: "ई-कॉमर्स",
+    tasks: "कार्य",
+    shifts: "शिफ्ट",
+    earnings: "कमाई",
+    service: "सेवा",
+    bookings: "बुकिंग",
+    ecom: "ई-कॉम",
+    payment: "भुगतान",
+    rating: "रेटिंग",
+    shg: "SHG",
+    insurance: "बीमा",
+    support: "सहायता",
 
     // Common UI elements
     search: "खोजें",
@@ -740,7 +835,7 @@ type Page =
   | "admin-panel";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+  const [currentPage, setCurrentPage] = useState<string>("home");
   const [currentUser, setCurrentUser] = useState<User | null>(
     null,
   );
@@ -754,7 +849,7 @@ export default function App() {
     );
   };
 
-  const navigateTo = (page: Page) => {
+  const navigateTo = (page: string) => {
     setCurrentPage(page);
   };
 
