@@ -23,10 +23,10 @@ export function Homepage({ onNavigate }: HomepageProps) {
             <div className="flex items-center">
               <img 
                 src={handshakeLogo} 
-                alt="WORQELY Handshake Logo" 
+                alt="WORQLEY Handshake Logo" 
                 className="h-10 w-10 mr-3"
               />
-              <h1 className="text-2xl text-primary font-bold">WORQELY</h1>
+              <h1 className="text-2xl text-primary font-bold">WORQLEY</h1>
             </div>
             <div className="flex items-center space-x-4">
               <LanguageSelector variant="default" />
@@ -150,7 +150,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
         </div>
       </section>
 
-      {/* About WORQELY Section */}
+      {/* About WORQLEY Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -582,10 +582,10 @@ export function Homepage({ onNavigate }: HomepageProps) {
               <div className="flex items-center mb-4">
                 <ImageWithFallback 
                   src="figma:asset/9e2bbd175b93fb6381c9377c8286952ef7ab87da.png" 
-                  alt="WORQELY Logo" 
+                  alt="WORQLEY Logo" 
                   className="h-8 w-8 mr-3 filter brightness-0 invert"
                 />
-                <span className="text-xl font-bold">WORQELY</span>
+                <span className="text-xl font-bold">WORQLEY</span>
               </div>
               <p className="text-gray-400 mb-4">
                 {t('footerDescription')}
@@ -641,7 +641,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
           </div>
           
           <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
-            <p>&copy; 2024 WORQELY. All rights reserved. | Made with ❤️ in India</p>
+            <p>&copy; 2024 WORQLEY. All rights reserved. | Made with ❤️ in India</p>
             <p className="mt-2 text-sm">Connecting India's workforce through technology</p>
           </div>
         </div>

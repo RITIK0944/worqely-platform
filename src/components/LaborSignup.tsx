@@ -339,13 +339,13 @@ export function LaborSignup({ onNavigate, onLogin }: LaborSignupProps) {
             <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <ImageWithFallback 
                 src="figma:asset/9e2bbd175b93fb6381c9377c8286952ef7ab87da.png" 
-                alt="WORQELY Logo" 
+                alt="WORQLEY Logo" 
                 className="h-8 w-8"
               />
             </div>
             <CardTitle>Worker Registration</CardTitle>
             <CardDescription>
-              Join WORQELY as a verified worker and start earning
+              Join WORQLEY as a verified worker and start earning
             </CardDescription>
           </CardHeader>
           

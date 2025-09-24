@@ -15,7 +15,7 @@ const translations = {
     becomeWorker: "Become a Worker",
     contact: "Contact: 8340 315 955",
     email: "Email: worqley@gmail.com",
-    about: "About WORQELY",
+    about: "About WORQLEY",
     services: "Our Services",
     howItWorks: "How It Works",
     testimonials: "What Our Users Say",
@@ -24,7 +24,7 @@ const translations = {
     smartPlatform: "Smart Platform",
     connectWithSkilled: "Connect with Skilled Workers",
     instantly: "Instantly",
-    heroDescription: "WORQELY revolutionizes how you find skilled workers. Our intelligent platform connects you with verified professionals across 15+ service categories in seconds, available in 12 Indian languages.",
+    heroDescription: "WORQLEY revolutionizes how you find skilled workers. Our intelligent platform connects you with verified professionals across 15+ service categories in seconds, available in 12 Indian languages.",
     
     // Trust indicators
     support: "24/7 Support",
@@ -44,7 +44,7 @@ const translations = {
     citiesCovered: "Cities Covered",
     
     // About section
-    aboutDescription: "WORQELY is India's leading intelligent platform that bridges the gap between customers and skilled workers. We leverage cutting-edge technology to ensure instant, reliable connections while maintaining the highest standards of safety and quality.",
+    aboutDescription: "WORQLEY is India's leading intelligent platform that bridges the gap between customers and skilled workers. We leverage cutting-edge technology to ensure instant, reliable connections while maintaining the highest standards of safety and quality.",
     instantMatchingDesc: "Our smart algorithm matches you with the perfect worker in seconds",
     verifiedWorkersDesc: "All workers undergo thorough Aadhaar verification and background checks",
     trustAndSafety: "Trust & Safety",
@@ -54,7 +54,7 @@ const translations = {
     cofounderInfo: "Co-founder: Rishi Jain | Contact: 8769392447 | Email: rishijain09414@gmail.com",
     
     // How it works
-    howWorqelyWorks: "How WORQELY Works",
+    howWorqelyWorks: "How WORQLEY Works",
     howWorqelyWorksDesc: "Get connected with skilled workers in just 3 simple steps. Our intelligent platform makes it seamless and efficient.",
     connectInstantly: "Connect Instantly",
     connectInstantlyDesc: "Simply call or use our platform to describe your service needs. Our system understands you in 12 Indian languages.",
@@ -81,7 +81,7 @@ const translations = {
     cookingDesc: "Chef, Home Cook",
     
     // Features
-    whyChooseWorqely: "Why Choose WORQELY?",
+    whyChooseWorqely: "Why Choose WORQLEY?",
     experienceFuture: "Experience the future of service booking with our intelligent platform designed for India's diverse workforce",
     smartConnect: "Smart Connect",
     smartConnectDesc: "Intelligent platform that understands your needs in 12 Indian languages and connects you with the right workers instantly.",
@@ -95,8 +95,8 @@ const translations = {
     
     // Testimonials
     realStories: "Real stories from satisfied customers and successful workers",
-    testimonial1: "WORQELY's platform understood my Hindi perfectly and found me an excellent plumber within 5 minutes. The service was outstanding and the pricing was very fair!",
-    testimonial2: "As a worker, WORQELY has transformed my income. I get regular work opportunities, fair payments, and the app is so easy to use. Highly recommended!",
+    testimonial1: "WORQLEY's platform understood my Hindi perfectly and found me an excellent plumber within 5 minutes. The service was outstanding and the pricing was very fair!",
+    testimonial2: "As a worker, WORQLEY has transformed my income. I get regular work opportunities, fair payments, and the app is so easy to use. Highly recommended!",
     testimonial3: "The verification process gives me complete confidence. All workers are genuine, skilled, and professional. Best platform for home services in India!",
     customerTitle: "Customer",
     electricianTitle: "Electrician",
@@ -176,7 +176,7 @@ const translations = {
     becomeWorker: "श्रमिक बनें",
     contact: "संपर्क: 8340 315 955",
     email: "ईमेल: worqley@gmail.com",
-    about: "WORQELY के बारे में",
+    about: "WORQLEY के बारे में",
     services: "हमारी सेवाएं",
     howItWorks: "यह कैसे काम करता है",
     testimonials: "हमारे उपयोगकर्ता क्या कहते हैं",
@@ -185,7 +185,7 @@ const translations = {
     smartPlatform: "स्मार्ट प्लेटफॉर्म",
     connectWithSkilled: "कुशल श्रमिकों से जुड़ें",
     instantly: "तुरंत",
-    heroDescription: "WORQELY कुशल श्रमिकों को खोजने के तरीके में क्रांति लाता है। हमारा बुद्धिमान प्लेटफॉर्म आपको सेकंडों में 15+ सेवा श्रेणियों में सत्यापित पेशेवरों से जोड़ता है, 12 भारतीय क्षेत्रीय भाषाओं में उपलब्ध है।",
+    heroDescription: "WORQLEY कुशल श्रमिकों को खोजने के तरीके में क्रांति लाता है। हमारा बुद्धिमान प्लेटफॉर्म आपको सेकंडों में 15+ सेवा श्रेणियों में सत्यापित पेशेवरों से जोड़ता है, 12 भारतीय क्षेत्रीय भाषाओं में उपलब्ध है।",
     
     // Trust indicators
     support: "24/7 सहायता",
@@ -205,7 +205,7 @@ const translations = {
     citiesCovered: "शहर शामिल",
     
     // About section
-    aboutDescription: "WORQELY भारत का अग्रणी बुद्धिमान प्लेटफॉर्म है जो ग्राहकों और कुशल श्रमिकों के बीच की खाई को पाटता है। हम सुरक्षा और गुणवत्ता के उच्चतम मानकों को बनाए रखते हुए तत्काल, विश्वसनीय कनेक्शन सुनिश्चित करने के लिए अत्याधुनिक तकनीक का लाभ उठाते हैं।",
+    aboutDescription: "WORQLEY भारत का अग्रणी बुद्धिमान प्लेटफॉर्म है जो ग्राहकों और कुशल श्रमिकों के बीच की खाई को पाटता है। हम सुरक्षा और गुणवत्ता के उच्चतम मानकों को बनाए रखते हुए तत्काल, विश्वसनीय कनेक्शन सुनिश्चित करने के लिए अत्याधुनिक तकनीक का लाभ उठाते हैं।",
     instantMatchingDesc: "हमारा स्मार्ट एल्गोरिदम आपको सेकंडों में सही श्रमिक से मिलाता है",
     verifiedWorkersDesc: "सभी श्रमिक पूर्ण आधार सत्यापन और पृष्ठभूमि जांच से गुजरते हैं",
     trustAndSafety: "विश्वास और सुरक्षा",
@@ -215,7 +215,7 @@ const translations = {
     cofounderInfo: "सह-संस्थापक: ऋषि जैन | संपर्क: 8769392447 | ईमेल: rishijain09414@gmail.com",
     
     // How it works
-    howWorqelyWorks: "WORQELY कैसे काम करता है",
+    howWorqelyWorks: "WORQLEY कैसे काम करता है",
     howWorqelyWorksDesc: "केवल 3 सरल चरणों में कुशल श्रमिकों से जुड़ें। हमार�� बुद्धिमान प्लेटफॉर्म इसे निर्बाध और कुशल बनाता है।",
     connectInstantly: "तुरंत कनेक्ट करें",
     connectInstantlyDesc: "बस कॉल करें या अपनी सेवा की जरूरतों का वर्णन करने के लिए हमारे प्लेटफॉर्म का उपयोग करें। हमारा सिस्टम आपको 12 भारतीय भाषाओं में समझता है।",
@@ -242,7 +242,7 @@ const translations = {
     cookingDesc: "शेफ, घरेलू रसोइया",
     
     // Features
-    whyChooseWorqely: "WORQELY क्यों चुनें?",
+    whyChooseWorqely: "WORQLEY क्यों चुनें?",
     experienceFuture: "भारत के विविध कार्यबल के लिए डिज़ाइन किए गए हमारे बुद्धिमान प्लेटफॉर्म के साथ सेवा बुकिंग के भविष्य का अनुभव करें",
     smartConnect: "स्मार्ट कनेक्ट",
     smartConnectDesc: "बुद्धिमान प्लेटफॉर्म जो 12 भारतीय भाषाओं में आपकी जरूरतों को समझता है और आपको सही श्रमिकों से तुरंत जोड़ता है।",
@@ -256,8 +256,8 @@ const translations = {
     
     // Testimonials
     realStories: "संतुष्ट ग्राहकों और सफल श्रमिकों की वास्तविक कहानियां",
-    testimonial1: "WORQELY के प्लेटफॉर्म ने मेरी हिंदी को पूरी तरह से समझा और 5 मिनट में मुझे एक उत्कृष्ट प्लंबर मिल गया। सेवा उत्कृष्ट थी और मूल्य निर्धारण बहुत उचित था!",
-    testimonial2: "एक श्रमिक के रूप में, WORQELY ने मेरी आय को बदल दिया है। मुझे नियमित काम के अवसर, उचित भुगतान मिलता है, और ऐप का उपयोग करना बहुत आसान है। अत्यधिक अनुशंसित!",
+    testimonial1: "WORQLEY के प्लेटफॉर्म ने मेरी हिंदी को पूरी तरह से समझा और 5 मिनट में मुझे एक उत्कृष्ट प्लंबर मिल गया। सेवा उत्कृष्ट थी और मूल्य निर्धारण बहुत उचित था!",
+    testimonial2: "एक श्रमिक के रूप में, WORQLEY ने मेरी आय को बदल दिया है। मुझे नियमित काम के अवसर, उचित भुगतान मिलता है, और ऐप का उपयोग करना बहुत आसान है। अत्यधिक अनुशंसित!",
     testimonial3: "सत्यापन प्रक्रिया मुझे पूर्ण विश्वास देती है। सभी श्रमिक वास्तविक, कुशल और पेशेवर हैं। भारत में गृह सेवाओं के लिए सबसे अच्छा प्लेटफॉर्म!",
     customerTitle: "ग्राहक",
     electricianTitle: "इलेक्ट्रीशियन",
@@ -334,7 +334,7 @@ const translations = {
     becomeWorker: "শ্রমিক হয়ে উঠুন",
     contact: "যোগাযোগ: 8340 315 955",
     email: "ইমেইল: worqley@gmail.com",
-    about: "WORQELY সম্পর্কে",
+    about: "WORQLEY সম্পর্কে",
     services: "আমাদের সেবাসমূহ",
     howItWorks: "এটি কীভাবে কাজ করে",
     testimonials: "আমাদের ব্যবহারকারীরা কি বলেন",
@@ -366,7 +366,7 @@ const translations = {
     becomeWorker: "కార్మికుడు అవ్వండి",
     contact: "సంప్రదింపులు: 8340 315 955",
     email: "ఇమెయిల్: worqley@gmail.com",
-    about: "WORQELY గురించి",
+    about: "WORQLEY గురించి",
     services: "మా సేవలు",
     howItWorks: "ఇది ఎలా పని చేస్తుంది",
     testimonials: "మా వినియోగదారులు ఏమి చెబుతున్నారు",
@@ -398,7 +398,7 @@ const translations = {
     becomeWorker: "कामगार व्हा",
     contact: "संपर्क: 8340 315 955",
     email: "ईमेल: worqley@gmail.com",
-    about: "WORQELY बद्दल",
+    about: "WORQLEY बद्दल",
     services: "आमच्या सेवा",
     howItWorks: "हे कसे कार्य करते",
     testimonials: "आमचे वापरकर्ते काय म्हणतात",
@@ -430,7 +430,7 @@ const translations = {
     becomeWorker: "தொழிலாளியாக மாறுங்கள்",
     contact: "தொடர்பு: 8340 315 955",
     email: "மின்னஞ்சல்: worqley@gmail.com",
-    about: "WORQELY பற்றி",
+    about: "WORQLEY பற்றி",
     services: "எங்கள் சேவைகள்",
     howItWorks: "இது எப்படி வேலை செய்கிறது",
     testimonials: "எங்கள் பயனர்கள் என்ன சொல்கிறார்கள்",
@@ -439,7 +439,7 @@ const translations = {
     instantMatching: "உடனடி பொருத்தம்",
     fairPricing: "நியாயமான விலை",
     qualityGuarantee: "தர உத்தரவாதம்",
-    trustedPlatform: "இந்தியாவின் மிக நம்பகமான சேவை தளம்",
+    trustedPlatform: "இந்தியாவின் மிகவும் நம்பகமான சேவை தளம்",
     founderInfo: "நிறுவனர்: ரிதிக் குமார் | தொடர்பு: 8340 315 955 | மின்னஞ்சல்: ritiksharma8340031@gmail.com",
     cofounderInfo: "இணை நிறுவனர்: ரிஷி ஜெயின் | தொடர்பு: 8769392447 | மின்னஞ்சல்: rishijain09414@gmail.com",
     dashboard: "டாஷ்போர்டு",
@@ -462,7 +462,7 @@ const translations = {
     becomeWorker: "મજૂર બનો",
     contact: "સંપર્ક: 8340 315 955",
     email: "ઇમેઇલ: worqley@gmail.com",
-    about: "WORQELY વિશે",
+    about: "WORQLEY વિશે",
     services: "અમારી સેવાઓ",
     howItWorks: "આ કેવી રીતે કામ કરે છે",
     testimonials: "અમારા વપરાશકર્તાઓ શું કહે છે",
@@ -494,7 +494,7 @@ const translations = {
     becomeWorker: "ಕಾರ್ಮಿಕನಾಗಿ",
     contact: "ಸಂಪರ್ಕ: 8340 315 955",
     email: "ಇಮೇಲ್: worqley@gmail.com",
-    about: "WORQELY ಬಗ್ಗೆ",
+    about: "WORQLEY ಬಗ್ಗೆ",
     services: "ನಮ್ಮ ಸೇವೆಗಳು",
     howItWorks: "ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ",
     testimonials: "ನಮ್ಮ ಬಳಕೆದಾರರು ಏನು ಹೇಳುತ್ತಾರೆ",
@@ -526,7 +526,7 @@ const translations = {
     becomeWorker: "തൊഴിലാളിയാകുക",
     contact: "ബന്ധപ്പെടുക: 8340 315 955",
     email: "ഇമെയിൽ: worqley@gmail.com",
-    about: "WORQELY യെക്കുറിച്ച്",
+    about: "WORQLEY യെക്കുറിച്ച്",
     services: "ഞങ്ങളുടെ സേവനങ്ങൾ",
     howItWorks: "ഇത് എങ്ങനെ പ്രവർത്തിക്കുന്നു",
     testimonials: "ഞങ്ങളുടെ ഉപയോക്താക്കൾ എന്താണ് പറ���ുന്നത്",
@@ -558,7 +558,7 @@ const translations = {
     becomeWorker: "ਮਜ਼ਦੂਰ ਬਣੋ",
     contact: "ਸੰਪਰਕ: 8340 315 955",
     email: "ਈਮੇਲ: worqley@gmail.com",
-    about: "WORQELY ਬਾਰੇ",
+    about: "WORQLEY ਬਾਰੇ",
     services: "ਸਾਡੀਆਂ ਸੇਵਾਵਾਂ",
     howItWorks: "ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ",
     testimonials: "ਸਾਡੇ ਯੂਜ਼ਰ ਕੀ ਕਹਿੰਦੇ ਹਨ",
@@ -590,7 +590,7 @@ const translations = {
     becomeWorker: "ଶ୍ରମିକ ହୁଅନ୍ତୁ",
     contact: "ଯୋଗାଯୋଗ: 8340 315 955",
     email: "ଇମେଲ: worqley@gmail.com",
-    about: "WORQELY ବିଷୟରେ",
+    about: "WORQLEY ବିଷୟରେ",
     services: "ଆମର ସେବାଗୁଡ଼ିକ",
     howItWorks: "ଏହା କିପରି କାମ କରେ",
     testimonials: "ଆମର ଉପଯୋଗକର୍ତ୍ତାମାନେ କ'ଣ କୁହନ୍ତି",
@@ -622,7 +622,7 @@ const translations = {
     becomeWorker: "শ্ৰমিক হ'ব",
     contact: "যোগাযোগ: 8340 315 955",
     email: "ইমেইল: worqley@gmail.com",
-    about: "WORQELY ৰ বিষয়ে",
+    about: "WORQLEY ৰ বিষয়ে",
     services: "আমাৰ সেৱাসমূহ",
     howItWorks: "ই কেনেদৰে কাম কৰে",
     testimonials: "আমাৰ ব্যৱহাৰকাৰীয়ে কি কয়",
@@ -654,7 +654,7 @@ const translations = {
     becomeWorker: "مزدور بنیں",
     contact: "رابطہ: 8340 315 955",
     email: "ای میل: worqley@gmail.com",
-    about: "WORQELY کے بارے میں",
+    about: "WORQLEY کے بارے میں",
     services: "ہماری خدمات",
     howItWorks: "یہ کیسے کام کرتا ہے",
     testimonials: "ہمارے صارفین کیا کہتے ہیں",
