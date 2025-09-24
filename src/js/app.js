@@ -1,5 +1,5 @@
 // Main application logic
-class WorkelyApp {
+class WorkleyApp {
   constructor() {
     this.currentPage = 'homepage';
     this.currentUser = null;
@@ -429,5 +429,5 @@ document.addEventListener('DOMContentLoaded', () => {
   app.checkExistingSession();
   
   // Make app globally available for debugging
-  window.worqelyApp = app;
+  window.worqleyApp = app;
 });
